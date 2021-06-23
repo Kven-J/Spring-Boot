@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>首页</h3>
+<a sec:authorize="hasRole('vip1')" href="views/level1/1">level1</a><br/><br/>
+<a sec:authorize="hasRole('vip2')" href="views/level2/2">level2</a><br/><br/>
+<a sec:authorize="hasRole('vip3')" href="views/level3/3">level3</a><br/><br/>
+<br/>
+<div sec:authorize="!isAuthenticated()">
+    <a th:href="@{/toLogin}">登录</a>
+</div>
+&nbsp;&nbsp;
+<div sec:authorize="isAuthenticated()">
+    用户名：<span sec:authentication="principal.username"></span>
+    &nbsp;&nbsp;
+    角色：<span sec:authentication="principal.authorities"></span>
+    &nbsp;&nbsp;
+    <a th:href="@{/logout}">注销</a>
+</div>
+</body>
+</html>

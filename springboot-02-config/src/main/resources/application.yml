@@ -1,0 +1,35 @@
+
+person:
+  name: Tylor${random.uuid}
+  age: 25
+  happy: true
+  birth: 2020/03/03
+  maps: {k1: v1, k2: v2}
+  lists: [cat,dog]
+  dog:
+    name: ${person.happy:hello}_大黄
+    age: 3
+
+dog:
+  first-name: 大黄
+  age: 3
+
+server:
+  port: 8080
+  servlet:
+    context-path: /tylor
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 8081
+spring:
+  profiles: test
+
+---
+server:
+  port: 8082
+spring:
+  profiles: dev

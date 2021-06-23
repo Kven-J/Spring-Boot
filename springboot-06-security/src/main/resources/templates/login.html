@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>欢迎来到登录页！！！</h3>
+    <form method="post" th:action="@{/login}">
+        用户名：<input type="text" name="name"><br/>
+        密码：<input type="password" name="pwd"><br/>
+        记住我：<input type="checkbox" name="remember">
+        <input type="submit" value="登录">
+    </form>
+</body>
+</html>
