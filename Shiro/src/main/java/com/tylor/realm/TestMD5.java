@@ -48,7 +48,7 @@ public class TestMD5 {
                 System.out.println(bool);
             }
             System.out.println("==========================");
-            //2.基于资源的访问控制
+            //2.基于资源的访问控制   权限字符串的规则是：**资源标识符：操作：资源实例标识符**
             //验证拥有单个操作权限
             System.out.println(subject.isPermitted("user:update:01"));
             //验证拥有多个操作权限
